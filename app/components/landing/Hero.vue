@@ -33,12 +33,10 @@ defineProps<{
           delay: 0.1
         }"
       >
-        <UColorModeAvatar
-          class="size-18 ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
-          :light="global.picture?.light!"
-          :dark="global.picture?.dark!"
-          :alt="global.picture?.alt!"
-        />
+       <img
+        :src="global.picture?.dark"
+        class="size-36 rounded-full mb-5 object-cover ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+      />
       </Motion>
     </template>
 
@@ -107,8 +105,8 @@ defineProps<{
         >
           <UButton v-bind="page.hero.links[0]" />
           <UButton
-            :color="global.available ? 'success' : 'error'"
-            variant="ghost"
+            :color="global.available ? 'primary' : 'error'"
+            variant="soft"
             class="gap-2"
             :to="global.available ? global.meetingLink : ''"
             :label="global.available ? 'Available for new projects' : 'Not available at the moment'"

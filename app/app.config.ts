@@ -1,8 +1,9 @@
+
 export default defineAppConfig({
   global: {
     picture: {
-      dark: '/1772198588075.jpeg',
-      light: '/1772198588075.jpeg',
+      dark: '/profile.jpg',
+      light: '/profile.jpg',
       alt: 'My profile picture'
     },
     meetingLink: 'https://cal.com/',
@@ -23,7 +24,7 @@ export default defineAppConfig({
     }
   },
   footer: {
-    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
+    credits: `kariuki Nicholas • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-github',

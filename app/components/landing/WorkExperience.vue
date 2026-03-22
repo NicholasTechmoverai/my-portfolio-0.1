@@ -10,13 +10,13 @@ defineProps<{
   <UPageSection
     :title="page.experience.title"
     :ui="{
-      container: '!p-0 gap-4 sm:gap-4',
+      container: '!p-0 gap-4 sm:gap-4 w-full',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
       description: 'mt-2'
     }"
   >
     <template #description>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-3">
         <Motion
           v-for="(experience, index) in page.experience.items"
           :key="index"
@@ -24,26 +24,39 @@ defineProps<{
           :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
           :transition="{ delay: 0.4 + 0.2 * index }"
           :in-view-options="{ once: true }"
-          class="text-muted flex items-center text-nowrap gap-2"
+          class="text-muted flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3"
         >
-          <p class="text-sm">
+          <!-- Date -->
+          <p class="text-xs sm:text-sm shrink-0">
             {{ experience.date }}
           </p>
-          <USeparator />
+
+          <USeparator class="hidden sm:block" />
+
+          <!-- Content -->
           <ULink
-            class="flex items-center gap-1"
+            class="flex items-center gap-2 min-w-0"
             :to="experience.company.url"
             target="_blank"
           >
-            <span class="text-sm">
+            <!-- Position -->
+            <span class="text-xs sm:text-sm shrink-0 w-full overflow-hidden ">
               {{ experience.position }}
             </span>
+
+            <!-- Company -->
             <div
-              class="inline-flex items-center gap-1"
+              class="flex items-center gap-1 min-w-0"
               :style="{ color: experience.company.color }"
             >
-              <span class="font-medium">{{ experience.company.name }}</span>
-              <UIcon :name="experience.company.logo" />
+              <span class="font-medium truncate max-w-[140px] sm:max-w-[200px]">
+                {{ experience.company.name }}
+              </span>
+
+              <UIcon
+                :name="experience.company.logo"
+                class="shrink-0 opacity-80"
+              />
             </div>
           </ULink>
         </Motion>
