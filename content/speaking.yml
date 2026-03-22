@@ -17,16 +17,16 @@ events:
   - category: Conference
     title: "Accessibility First: Building Inclusive Web Apps"
     date: "2023-11-08"
-    location: "Boston Web Performance Meetup, Boston, MA"
+    location: "Kenya Web Performance Meetup, Nairobi, Kenya"
   - category: Live talk
     title: "Mastering Component Design in Figma & Vue"
     date: "2024-08-20"
-    location: "Design & Dev Boston Meetup, Boston, MA"
+    location: "Kenya Front-End Meetup, Nairobi, Kenya"
     url: "#"
   - category: Live talk
     title: "From Wireframe to Web: A Practical Front-End Workflow"
     date: "2024-03-05"
-    location: "Internal Workshop @ PreviousCompany Inc."
+    location: "Internal Workshop @ Independent Software Developer"
   - category: Live talk
     title: "The Power of User Research in Product Development"
     date: "2023-09-12"

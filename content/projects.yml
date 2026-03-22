@@ -1,6 +1,7 @@
-title: Designing Interfaces, Building Experiences.
-description: I've worked on a variety of projects, focusing on creating intuitive digital experiences where thoughtful design meets clean code. Here are some highlights I'm proud of, showcasing my process from concept to execution.
+title: Building Scalable Products, Intelligent Systems.
+description: I deliver full-stack and AI-focused projects using Nuxt 4, Nuxt UI, Tailwind, FastAPI, Docker, and PyTorch. Here are real examples of architecture, UX, and ML integration.
 links:
   - label: "Let's talk"
     color: "neutral"
-  - label: 'Email me'
+  - label: "Email me"
+    to: "mailto:kariuki12nicholas@gmail.com"

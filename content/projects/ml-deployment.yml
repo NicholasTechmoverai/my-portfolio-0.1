@@ -1,0 +1,6 @@
+title: ML Model Deployment Platform
+description: Created a scalable platform for deploying and managing machine learning models using FastAPI, PyTorch, and Docker. Features include model versioning, A/B testing capabilities, and real-time inference APIs with monitoring dashboards built in Nuxt 4.
+image: https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+url: "#"
+tags: ["PyTorch", "FastAPI", "Docker", "Nuxt 4", "Machine Learning", "Model Deployment"]
+date: "2024"

@@ -11,7 +11,7 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: 'blue',
+      primary: 'orange',
       neutral: 'neutral'
     },
     pageHero: {
@@ -26,20 +26,20 @@ export default defineAppConfig({
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
-      'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
-      'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
-    }, {
-      'icon': 'i-simple-icons-x',
-      'to': 'https://go.nuxt.com/x',
-      'target': '_blank',
-      'aria-label': 'Nuxt on X'
-    }, {
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt/ui',
+      'to': 'https://github.com/NicholasTechmoverai',
       'target': '_blank',
-      'aria-label': 'Nuxt UI on GitHub'
+      'aria-label': 'GitHub'
+    }, {
+      'icon': 'i-simple-icons-linkedin',
+      'to': 'https://www.linkedin.com/in/nicholas-kariuki-g/',
+      'target': '_blank',
+      'aria-label': 'LinkedIn'
+    }, {
+      'icon': 'i-simple-icons-maildotru',
+      'to': 'mailto:kariuki12nicholas@gmail.com',
+      'target': '_blank',
+      'aria-label': 'Email'
     }]
   }
 })

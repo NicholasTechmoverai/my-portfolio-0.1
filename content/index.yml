@@ -1,13 +1,19 @@
 seo:
-  title: "Nicholas Kariuki - Software engineer"
-  description: "Welcome to my portfolio! I'm Nicholas Kariuki, a software engineer and Machine Learning developer based in Kenya. I specialize in creating user-centered digital experiences that are both beautiful and functional."
-title: "Hey, I'm Nicholas Kariuki a software engineer and Machine Learning developer"
-description: "I craft intuitive digital experiences where design meets functionality. Based in Boston, bringing ideas to life through code and creativity."
+  title: "Nicholas Kariuki - Full-Stack Developer & Machine Learning Engineer"
+  description: "Nicholas Kariuki from Murang’a, Kenya. Full-stack developer and AI/ML engineer specializing in FastAPI, Vue/Nuxt, Docker, and PyTorch for production-grade web applications."
+title: "Hi, I’m Nicholas Kariuki — Full-Stack Developer & ML Engineer"
+description: "I engineer reliable web apps and ML solutions using Python, FastAPI, Vue/Nuxt, Docker, PostgreSQL, and PyTorch. Based in Murang’a, Kenya, I design systems from concept to deployment."
 hero:
   links:
-    - label: "Linked In"
-      to: https://www.linkedin.com/in/nicholas-kariuki-g/
+    - label: "LinkedIn"
+      to: https://www.linkedin.com/in/nicholaskariuki-g
       color: "neutral"
+    - label: "GitHub"
+      to: https://github.com/NicholasTechmoverai
+      color: "primary"
+    - label: "Email"
+      to: mailto:kariuki12nicholas@gmail.com
+      color: "accent"
   images:
     - src: /hero/random-1.avif
       alt: Random Image 1
@@ -30,57 +36,47 @@ hero:
 about:
   title: "About Me"
   description: |
-    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
-    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+    Full-stack developer and aspiring ML/AI engineer with a strong background in building web applications and intelligent systems.
+    I design and deploy scalable solutions with FastAPI, Nuxt 4, Tailwind CSS, Docker, PostgreSQL, PyTorch, and modern CI/CD workflows.
 experience:
   title: Work Experience
   items:
-    - position: "Brand Designer at"
-      date: "2023 - Present"
+    - position: "Independent Software Developer and AI Engineer"
+      date: "2022 - Present"
       company:
-        name: Nuxt
-        logo: "i-simple-icons-nuxtdotjs"
-        url: "https://nuxt.com"
-        color: "#00DC82"
-    - position: "Assets Designer at"
-      date: "2022 - 2023"
+        name: Self-Employed
+        logo: "i-simple-icons-github"
+        url: "https://github.com/NicholasTechmoverai"
+        color: "#333333"
+    - position: "Full-Stack Developer"
+      date: "2021 - 2022"
       company:
-        name: Raycast
-        logo: "i-simple-icons-raycast"
-        url: "https://raycast.com"
-        color: "#FF6363"
-    - position: "Senior UX/UI Designer at"
-      date: "2020 - 2021"
-      company:
-        name: Linear
-        logo: "i-simple-icons-linear"
-        url: "https://linear.app"
-        color: "#5E6AD2"
+        name: Freelance Projects
+        logo: "i-simple-icons-vuejs"
+        url: "https://www.tera-in.top"
+        color: "#42B883"
 testimonials:
-  - quote: "Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics."
+  - quote: "Nicholas' engineering mindset transformed our product pipeline. He balances robust architecture with clean implementation, which improved deployment reliability and user satisfaction."
     author:
       name: "Sarah Chen"
       description: "Product Director at Bloom Finance"
       avatar:
         src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
         srcset: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
-  - quote: "Working with Emma was the best decision we made for our startup. She didn't just deliver designs—she challenged our assumptions, conducted thorough user research, and created an experience that truly resonated with our audience. Her technical knowledge of front-end development meant the handoff to our engineering team was seamless."
+  - quote: "Working with Nicholas was the best decision we made for our startup. He didn't just deliver software—he proposed architecture improvements, optimized our pipeline, and made collaboration seamless."
     author:
       name: "Michael Rodriguez"
       description: "Co-founder of Wavelength Music"
       avatar:
         src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
         srcset: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
-  - quote: "Emma stands out in her ability to translate complex sustainability data into intuitive interfaces. Her work on EcoTrack wasn't just visually stunning—it fundamentally changed how our users interact with environmental information. She approaches each problem with both creativity and analytical rigor, which is exactly what we needed."
+  - quote: "Nicholas stands out in his ability to translate complex ML concepts into production-ready features. His work in sustainability analytics made data actionable and accessible to users."
     author:
       name: "Dr. Aisha Johnson"
       description: "Chief Innovation Officer at GreenTech Solutions"
       avatar:
         src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
         srcset: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
-blog:
-  title: "Latest Articles"
-  description: "Some of my recent thoughts"
 faq:
   title: Frequently Asked Questions
   description: Answers to common questions about my process and services.
@@ -89,32 +85,32 @@ faq:
       questions:
         - label: What services do you offer?
           content: |
-            I specialize in UX/UI design and front-end development. This includes user research, wireframing, interactive prototyping, creating intuitive user interfaces, building responsive websites and web applications (especially with Vue.js/Nuxt.js), and developing design systems. My goal is to create seamless digital experiences from concept to deployment.
-        - label: What is your design process like?
+            I specialize in full-stack web development and machine learning engineering. This includes backend API development with FastAPI, frontend applications with Nuxt 4 and Vue.js, database design with PostgreSQL, ML model development with PyTorch, and deployment with Docker. I build scalable, production-ready systems from concept to deployment.
+        - label: What is your development process like?
           content: |
-            My process is collaborative and iterative, typically involving stages like Discovery & Research, Ideation & Prototyping, User Testing, Visual Design, and close collaboration with development teams during implementation. I tailor the process based on project needs, always focusing on user-centered solutions.
+            My process is collaborative and iterative, involving requirements analysis, architecture design, implementation, testing, and deployment. I use modern development practices including version control, CI/CD pipelines, and containerization. I tailor the approach based on project needs, always focusing on scalable and maintainable solutions.
         - label: Do you work with startups?
           content: |
-            Absolutely! I enjoy working with startups to help shape their product vision and create user-friendly interfaces from the ground up. I can adapt my process to fit the fast-paced startup environment.
+            Absolutely! I enjoy working with startups and small teams to build MVPs, scale applications, and implement AI/ML features. I can adapt to fast-paced environments and help establish solid technical foundations.
     - title: Pricing & Timelines
       questions:
         - label: How much does a project typically cost?
           content: |
-            Project costs vary based on scope, complexity, features, and timeline. For comprehensive UX/UI design and front-end development projects, my engagements typically start around $5,000, with average projects ranging between $8,000 and $25,000. For consulting or specific design tasks, my day rate is $700.
+            Project costs vary based on scope, complexity, and timeline. For full-stack web applications, costs typically range from $3,000 to $15,000 depending on features and complexity. ML/AI projects start at $5,000 and can scale based on model complexity and data requirements. Consulting rates are $50-80/hour.
         - label: What are your payment terms?
           content: |
-            I generally require a 40% deposit to schedule the project and begin work, with the remaining 60% due upon successful project completion and delivery. I accept payments via bank transfer and Stripe.
+            I generally require a 50% deposit to begin work, with the remaining 50% due upon project completion. For larger projects, I offer milestone-based payments. I accept payments via bank transfer, M-Pesa, and international payment methods.
         - label: How long does a typical project take?
           content: |
-            Timelines depend heavily on the project's scope and complexity. Smaller projects might take 3-4 weeks, while larger, more involved projects can range from 2 to 4 months. I always provide a detailed timeline estimate after the initial discovery phase.
+            Timelines depend on project scope. Simple web applications take 2-4 weeks, complex full-stack projects 1-3 months, and ML projects 2-6 months depending on data availability and model complexity. I provide detailed estimates after initial consultation.
         - label: Do you offer retainers or ongoing support?
           content: |
-            Yes, for clients needing ongoing design support, feature development, or maintenance, I offer monthly retainer options tailored to specific needs. Let's discuss if this is something you're interested in.
+            Yes, I offer monthly retainer options for ongoing development, maintenance, and ML model updates. This is ideal for clients needing continuous development support or regular AI model improvements.
     - title: About Me
       questions:
         - label: What do you enjoy most about your work?
           content: |
-            I love the challenge of solving complex problems through design and technology. It's incredibly rewarding to see people interact with something I've created and find it genuinely useful and easy to navigate. Bridging the gap between user needs and technical possibilities is what truly excites me.
+            I love building systems that solve real problems using cutting-edge technology. Whether it's creating efficient APIs, training ML models, or architecting scalable applications, the challenge of turning complex requirements into working solutions is what drives me.
         - label: What are your hobbies outside of work?
           content: |
-            When I'm not designing or coding, I enjoy exploring Boston's neighborhoods, trying out new coffee shops, and hiking in the nearby reservations. I'm also passionate about photography and occasionally contribute to open-source projects.
+            When I'm not coding or training models, I enjoy exploring new technologies, contributing to open-source projects, and learning about distributed systems. I also like cycling and mentoring junior developers.

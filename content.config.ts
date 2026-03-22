@@ -58,7 +58,6 @@ export default defineContentConfig({
           }))
         }),
         testimonials: z.array(createTestimonialSchema()),
-        blog: createBaseSchema(),
         faq: createBaseSchema().extend({
           categories: z.array(
             z.object({
@@ -85,21 +84,10 @@ export default defineContentConfig({
         date: z.date()
       })
     }),
-    blog: defineCollection({
-      type: 'page',
-      source: 'blog/*.md',
-      schema: z.object({
-        minRead: z.number(),
-        date: z.date(),
-        image: z.string().nonempty().editor({ input: 'media' }),
-        author: createAuthorSchema()
-      })
-    }),
     pages: defineCollection({
       type: 'page',
       source: [
-        { include: 'projects.yml' },
-        { include: 'blog.yml' }
+        { include: 'projects.yml' }
       ],
       schema: z.object({
         links: z.array(createButtonSchema())
