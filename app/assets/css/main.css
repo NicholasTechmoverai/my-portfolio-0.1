@@ -6,6 +6,19 @@
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
   --font-serif: 'Instrument Serif', serif;
+
+
+  /* New Gold Palette */
+  --color-gold-50:  #FFFBF0;
+  --color-gold-100: #FEF3C0;
+  --color-gold-200: #FDE68A;
+  --color-gold-300: #FCD34D;
+  --color-gold-400: #FBBF24;
+  --color-gold-500: #D4AF37; /* main gold */
+  --color-gold-600: #B8962E;
+  --color-gold-700: #92761F;
+  --color-gold-800: #6B5614;
+  --color-gold-900: #4A3B0A;
 }
 
 :root {

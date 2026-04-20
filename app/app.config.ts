@@ -6,13 +6,13 @@ export default defineAppConfig({
       light: '/profile.jpg',
       alt: 'My profile picture'
     },
-    meetingLink: 'https://cal.com/',
-    email: 'ui-pro@nuxt.com',
+    meetingLink: 'https://calendly.com/kariuki12nicholas/30min',
+    email: 'kariuki12nicholas@gmail.com',
     available: true
   },
   ui: {
     colors: {
-      primary: 'orange',
+      primary: 'gold',
       neutral: 'neutral'
     },
     pageHero: {
