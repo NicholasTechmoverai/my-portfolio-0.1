@@ -107,10 +107,11 @@ defineProps<{
             :color="global.available ? 'success' : 'error'"
             variant="soft"
             class="gap-2"
+            icon="i-lucide-calendar-clock"
             :to="global.available ? global.meetingLink : ''"
             :label="
               global.available
-                ? 'Available for new projects'
+                ? 'Schedule a Meeting'
                 : 'Not available at the moment'
             "
           >

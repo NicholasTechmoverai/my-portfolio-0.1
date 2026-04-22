@@ -8,7 +8,11 @@ export default defineAppConfig({
     },
     meetingLink: 'https://calendly.com/kariuki12nicholas/30min',
     email: 'kariuki12nicholas@gmail.com',
-    available: true
+    available: true,
+    name: 'Nicholas Kariuki',
+    ogImage: '/og-image.png',
+    description: 'I am a software developer specializing in building exceptional digital experiences. Currently, I am focused on building accessible, human-centered products at Upstatement.',
+    keywords: ['Software Developer', 'Web Developer', 'Full Stack Developer', 'JavaScript', 'Vue.js', 'Nuxt.js', 'React', 'Node.js', 'Express', 'MongoDB', 'SQL', 'Git', 'HTML', 'CSS']
   },
   ui: {
     colors: {

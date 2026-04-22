@@ -17,7 +17,7 @@ const project = computed(() => {
 if (!project.value) {
     throw createError({
         statusCode: 404,
-        statusMessage: 'Project not found',
+        statusMessage: `Project "${slug}" not found`,
         fatal: true
     })
 }
@@ -36,11 +36,14 @@ useSeoMeta({
 
 <template>
     <UPage v-if="project">
-        <UButton :to="`/projects/`" variant="soft" color="neutral" icon="i-lucide-arrow-left" label="Back to Projects" class="mb-4"/>
-       
+        <ULink to="/projects" class="text-sm flex items-center gap-1">
+            <UIcon name="lucide:chevron-left" />
+            Projects
+        </ULink>
         <UPageHero :title="project.title" :description="project.description" :image="project.image" />
 
-        <img :src="project.image" :alt="project.title + ' Image'" srcset="" class="w-full h-64 object-cover rounded-lg mb-0" />
+        <img :src="project.image" :alt="project.title + ' Image'" srcset=""
+            class="w-full h-64 object-cover rounded-lg mb-0" />
 
         <UPageSection>
             <div class="prose max-w-none">

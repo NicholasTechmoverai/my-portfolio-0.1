@@ -1,0 +1,34 @@
+title: Contact Me
+slug: contact
+description: Get in touch with me for collaborations, inquiries, or just to say hi! I'm always open to connecting with fellow developers, potential employers, and anyone interested in my work.
+
+contactInfo:
+  title: Contact Information
+  items:
+    - label: Email
+      icon: i-simple-icons-gmail
+      value: kariuki12nicholas@gmail.com
+      link: mailto:kariuki12nicholas@gmail.com
+    - label: Phone
+      icon: i-lucide-phone
+      value: +254741540233
+      link: tel:+254741540233
+    - label: Location
+      icon: i-lucide-map-pin
+      value: Murang'a, Kenya
+    - label: Schedule a Meeting
+      icon: i-lucide-calendar-clock
+      value: 30min Meeting
+      link: https://calendly.com/kariuki12nicholas/30min
+
+connectOnline:
+  title: Connect Online
+  items:
+    - label: LinkedIn
+      icon: i-simple-icons-linkedin
+      value: Nicholas Kariuki
+      link: https://linkedin.com/in/nicholaskariuki-g
+    - label: GitHub
+      icon: i-simple-icons-github
+      value: NicholasTechmoverai
+      link: https://github.com/NicholasTechmoverai

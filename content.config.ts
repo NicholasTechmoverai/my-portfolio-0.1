@@ -87,7 +87,8 @@ export default defineContentConfig({
     pages: defineCollection({
       type: 'page',
       source: [
-        { include: 'projects.yml' }
+        { include: 'projects.yml' },
+        { include: 'proposals.yml' },
       ],
       schema: z.object({
         links: z.array(createButtonSchema())
@@ -114,6 +115,65 @@ export default defineContentConfig({
         content: z.object({}),
         images: z.array(createImageSchema())
       })
-    })
+    }),
+    contact: defineCollection({
+      type: 'page',  // or 'data' - 'page' is for single files
+      source: 'contact.yml',
+      schema: z.object({
+        // Your top-level fields
+        title: z.string(),
+        slug: z.string(),
+        description: z.string(),
+
+        // Contact info section
+        contactInfo: z.object({
+          title: z.string(),
+          items: z.array(z.object({
+            label: z.string(),
+            icon: z.string(),
+            value: z.string(),
+            link: z.string().optional()
+          }))
+        }),
+
+        // Connect online section
+        connectOnline: z.object({
+          title: z.string(),
+          items: z.array(z.object({
+            label: z.string(),
+            icon: z.string(),
+            value: z.string(),
+            link: z.string().url()
+          }))
+        })
+      })
+    }),
+    proposals: defineCollection({
+      type: 'page',
+      source: 'proposals.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        slug: z.string().nonempty(),
+        disclaimer: z.string().optional(),
+        copyright: z.string().optional(),
+        collaboration: z.string().optional(),
+       
+      })
+    }),
+    proposal: defineCollection({
+      type: 'data',
+      source: 'proposals/*.md',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        slug: z.string().nonempty(),
+        minRead: z.number(),
+        date: z.date(),
+        image: z.string().nonempty().editor({ input: 'media' }),
+        author: createAuthorSchema()
+      })
+    }),
+   
   }
 })

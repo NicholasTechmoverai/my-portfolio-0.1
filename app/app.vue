@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-
+const config = useAppConfig()
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
 useHead({
@@ -18,9 +18,9 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s - Nuxt Portfolio Template',
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png',
+  titleTemplate: '%s - ' + config.global.name,
+  ogImage: config.global.ogImage,
+  twitterImage: config.global.ogImage,
   twitterCard: 'summary_large_image'
 })
 
