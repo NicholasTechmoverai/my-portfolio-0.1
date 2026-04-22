@@ -62,58 +62,57 @@ testimonials:
   - quote: "Nicholas' engineering mindset transformed our product pipeline. He balances robust architecture with clean implementation, which improved deployment reliability and user satisfaction."
     author:
       name: "Brian Macharia"
-      description: "Product Director at Bloom Finance"
+      description: "CTO of Tera-In"
       avatar:
-        src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
-        srcset: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
+        src: ""
+        srcset: ""
   - quote: "Working with Nicholas was the best decision we made for our startup. He didn't just deliver software—he proposed architecture improvements, optimized our pipeline, and made collaboration seamless."
     author:
-      name: "Michael Rodriguez"
-      description: "Co-founder of Wavelength Music"
+      name: "Brian Macharia"
+      description: "Backend Engineer at MuTech Community"
       avatar:
-        src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
-        srcset: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
+        src: ""
+        srcset: ""
   - quote: "Nicholas stands out in his ability to translate complex ML concepts into production-ready features. His work in sustainability analytics made data actionable and accessible to users."
     author:
-      name: "Dr. Aisha Johnson"
-      description: "Chief Innovation Officer at GreenTech Solutions"
+      name: "Steve Kariuki"
+      description: "Lead Data Scientist at GreenTech Solutions"
       avatar:
-        src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
-        srcset: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x"
+        src: ""
+        srcset: ""
 faq:
   title: Frequently Asked Questions
-  description: Answers to common questions about my process and services.
+  description: Insights into how I think, work, and approach creative & technical tasks.
   categories:
-    - title: Services & Process
+    - title: My Approach & Process
       questions:
-        - label: What services do you offer?
+        - label: How do you approach a new task or project?
           content: |
-            I specialize in full-stack web development and machine learning engineering. This includes backend API development with FastAPI, frontend applications with Nuxt 4 and Vue.js, database design with PostgreSQL, ML model development with PyTorch, and deployment with Docker. I build scalable, production-ready systems from concept to deployment.
-        - label: What is your development process like?
+            I start by breaking the task down into small, actionable steps. First, I clarify the goal (what “done” looks like). Then I research possible solutions, pick the simplest viable approach, and build a quick prototype or outline. I iterate based on feedback or self-review, and I always document my learnings along the way. For me, process is personal — I adapt it to fit the task, not the other way around.
+        - label: What tools and methods do you use to stay organized?
           content: |
-            My process is collaborative and iterative, involving requirements analysis, architecture design, implementation, testing, and deployment. I use modern development practices including version control, CI/CD pipelines, and containerization. I tailor the approach based on project needs, always focusing on scalable and maintainable solutions.
-        - label: Do you work with startups?
+            I use a mix of digital and analog systems: a task board (like Trello or Notion) for tracking progress, a personal wiki for notes and decisions, and time-blocking for deep work. I also practice weekly reflection to see what worked and what didn’t. My goal is to reduce context switching and keep my mental energy focused.
+        - label: How do you handle unfamiliar or hard problems?
           content: |
-            Absolutely! I enjoy working with startups and small teams to build MVPs, scale applications, and implement AI/ML features. I can adapt to fast-paced environments and help establish solid technical foundations.
-    - title: Pricing & Timelines
+            I treat hard problems as learning opportunities. I start by defining what I don’t know, then break the problem into sub-questions. I use documentation, forums, and small experiments to test hypotheses. If I’m stuck, I simplify the problem or take a deliberate break. I’ve learned that patience and curiosity almost always unlock the next step.
+
+    - title: Mindset & Motivation  (instead of Pricing)
       questions:
-        - label: How much does a project typically cost?
+        - label: What keeps you motivated to finish difficult tasks?
           content: |
-            Project costs vary based on scope, complexity, and timeline. For full-stack web applications, costs typically range from $3,000 to $15,000 depending on features and complexity. ML/AI projects start at $5,000 and can scale based on model complexity and data requirements. Consulting rates are $50-80/hour.
-        - label: What are your payment terms?
+            I’m driven by curiosity and the small wins along the way. When a task feels overwhelming, I focus on completing just one tiny piece — that momentum usually carries me forward. I also keep a “done list” to remind myself of past challenges I’ve overcome. Ultimately, I love the feeling of turning chaos into clarity.
+        - label: How do you balance quality vs. speed?
           content: |
-            I generally require a 50% deposit to begin work, with the remaining 50% due upon project completion. For larger projects, I offer milestone-based payments. I accept payments via bank transfer, M-Pesa, and international payment methods.
-        - label: How long does a typical project take?
+            It depends on the goal. For learning or experimentation, speed wins — I allow myself to make mistakes. For portfolio pieces or client work, I prioritize quality and maintainability. My rule of thumb: never sacrifice clarity for speed if someone else (or future me) will need to understand the work later.
+        - label: How do you measure success for a personal project?
           content: |
-            Timelines depend on project scope. Simple web applications take 2-4 weeks, complex full-stack projects 1-3 months, and ML projects 2-6 months depending on data availability and model complexity. I provide detailed estimates after initial consultation.
-        - label: Do you offer retainers or ongoing support?
-          content: |
-            Yes, I offer monthly retainer options for ongoing development, maintenance, and ML model updates. This is ideal for clients needing continuous development support or regular AI model improvements.
+            Success isn’t always about metrics. For me, it’s often: “Did I learn something new?”, “Would I be proud to show this to a peer?”, or “Does this solve a real need I had?”. I also consider whether the project taught me a better way to work — because that skill carries into everything else I do.
+
     - title: About Me
       questions:
-        - label: What do you enjoy most about your work?
+        - label: What do you enjoy most about building things?
           content: |
-            I love building systems that solve real problems using cutting-edge technology. Whether it's creating efficient APIs, training ML models, or architecting scalable applications, the challenge of turning complex requirements into working solutions is what drives me.
-        - label: What are your hobbies outside of work?
+            I love the moment when a rough idea turns into something tangible — whether it’s a working interface, a script that automates a boring task, or a sketch that finally feels right. Building things gives me a sense of agency. I also enjoy the detective work of debugging or refining until everything clicks.
+        - label: What do you do when you’re not working on a task?
           content: |
-            When I'm not coding or training models, I enjoy exploring new technologies, contributing to open-source projects, and learning about distributed systems. I also like cycling and mentoring junior developers.
+            I recharge by stepping away from screens: reading non-fiction, going for long walks, or tinkering with analog hobbies like sketching or mechanical keyboards. I also love sharing what I’ve learned with others — sometimes by writing short guides or chatting with fellow makers.
