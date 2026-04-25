@@ -1,5 +1,8 @@
 
 export default defineAppConfig({
+  app :{
+    baseURL: 'http://localhost:8000/',
+  },
   global: {
     picture: {
       dark: '/profile.jpg',

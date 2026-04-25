@@ -158,7 +158,7 @@ export default defineContentConfig({
         disclaimer: z.string().optional(),
         copyright: z.string().optional(),
         collaboration: z.string().optional(),
-       
+
       })
     }),
     proposal: defineCollection({
@@ -174,6 +174,52 @@ export default defineContentConfig({
         author: createAuthorSchema()
       })
     }),
-   
+    chat: defineCollection({
+      type: 'page',
+      source: 'chat.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        content: z.string().optional(),  // Add this for the welcome text
+        links: z.array(createButtonSchema()).optional(),
+        seo: z.object({
+          title: z.string().optional(),
+          description: z.string().optional()
+        }).optional(),
+        images: z.array(createImageSchema()).optional(),  // Add this for images
+        metadata: z.object({  // Add this for metadata
+          title: z.string().optional(),
+          description: z.string().optional()
+        }).optional(),
+        messages: z.array(z.object({  // Add this for example messages
+          role: z.enum(['user', 'assistant']),
+          content: z.string()
+        })).optional()
+      })
+    }),
+    ai_template: defineCollection({
+      type: 'page',
+      source: 'ai_template.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        ai: z.object({
+          name: z.string(),
+          fullName: z.string(),
+          shortDescription: z.string(),
+          description: z.string()
+        }),
+        startChat: z.object({
+          title: z.string(),
+          description: z.string()
+        }),
+        input: z.object({
+          placeholder: z.string(),
+          loading: z.string()
+        }),
+        randomPrompts: z.array(z.string())
+      })
+    })
+
   }
 })
