@@ -1,7 +1,7 @@
 
 export default defineAppConfig({
   app :{
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'https://api.tera-in.top/',
   },
   global: {
     picture: {

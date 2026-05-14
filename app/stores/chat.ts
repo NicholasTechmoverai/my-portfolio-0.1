@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 interface Message {
   id: string
   content: string
-  role: 'user' | 'assistant'
+  role: 'user' | 'authenticated' | 'admin'
   date: Date
 }
 
@@ -11,7 +11,7 @@ interface ChatConfig {
   model: keyof typeof Models
   temperature: number
   maxTokens: number
-  role: 'admin' | 'user' | 'authenticated' | 'guest'
+  role: 'admin' | 'user' | 'authenticated'
   userId: string
 }
 
@@ -43,7 +43,7 @@ export const useChatStore = defineStore('chat', {
       model: 'gpt-3.5-turbo' as keyof typeof Models,
       temperature: 0.7,
       maxTokens: 500,
-      role: 'guest' as ChatConfig['role'],
+      role: 'user' as ChatConfig['role'],
       userId: process.client ? localStorage.getItem('chat_user_id') || generateUserId() : generateUserId()
     } as ChatConfig
   }),
@@ -58,7 +58,7 @@ export const useChatStore = defineStore('chat', {
   actions: {
     init() {
       if (!process.client) return
-      
+
       const saved = localStorage.getItem('chat_messages')
       if (saved) {
         this.messages = JSON.parse(saved).map((msg: any) => ({
@@ -66,7 +66,7 @@ export const useChatStore = defineStore('chat', {
           date: new Date(msg.date)
         }))
       }
-      
+
       if (!localStorage.getItem('chat_user_id')) {
         localStorage.setItem('chat_user_id', this.config.userId)
       }
@@ -93,14 +93,26 @@ export const useChatStore = defineStore('chat', {
       try {
         const response = await $fetch(useEndpoints().chat, {
           method: 'POST',
-          body: { prompt: content, config: this.config }
+          body: {
+            prompt: content,
+            history: this.messages.slice(-12), // last 12 messages
+            config: this.config
+          }
         })
-        
-        const aiResponse = response.content || response.results?.[0]?.output?.message || 'Unable to process request'
+
+        const aiResponse =
+          response.content ||
+          response.results?.[0]?.output?.message ||
+          'Unable to process request'
+
         this.addMessage(aiResponse, 'assistant')
+
         return aiResponse
       } catch (error) {
-        this.addMessage('Sorry, an error occurred. Please try again.', 'assistant')
+        this.addMessage(
+          'Sorry, an error occurred. Please try again.',
+          'assistant'
+        )
         return null
       } finally {
         this.isLoading = false

@@ -2,7 +2,7 @@
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
         <!-- Chat Window -->
         <Transition name="chat-pop">
-            <div v-if="isOpen"
+            <div v-if="isOpen || isFull"
                 class="chat-window w-80 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/50 overflow-hidden flex flex-col">
                 <!-- Header with glass effect -->
                 <div
@@ -14,14 +14,15 @@
                         {{ page?.ai?.shortName || 'AI' }}
                     </div>
                     <div class="relative flex-1">
-                        <div class="text-sm font-semibold text-white">{{ page?.ai?.fullName || "AI Assistant"}}</div>
+                        <div class="text-sm font-semibold text-white">{{ page?.ai?.fullName || "AI Assistant" }}</div>
                         <div class="flex items-center gap-1.5">
                             <span class="relative flex h-1.5 w-1.5">
                                 <span
                                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
                             </span>
-                            <span class="text-[10px] text-white/90">{{ page?.ai?.shortDescription || "Ready to help" }}</span>
+                            <span class="text-[10px] text-white/90">{{ page?.ai?.shortDescription || "Ready to help"
+                            }}</span>
                         </div>
                     </div>
                     <div class="relative flex gap-1">
@@ -54,28 +55,45 @@
                                     stroke-width="1.5" />
                             </svg>
                         </div>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium"> {{ page?.startChat?.title || "✨Start a conversation with Nicholas" }}</p>
-                        <p class="text-[10px] text-gray-400 dark:text-gray-500 mt-1">{{ page?.startChat?.description || "Ask about my projects, experience, or anything else!" }}
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium"> {{ page?.startChat?.title ||
+                            "✨Start a conversation with Nicholas" }}</p>
+                        <p class="text-[10px] text-gray-400 dark:text-gray-500 mt-1">{{ page?.startChat?.description ||
+                            "Ask about my projects, experience, or anything else!" }}
                         </p>
                     </div>
 
                     <TransitionGroup name="msg-fade">
                         <div v-for="msg in messages" :key="msg.id" class="flex gap-1.5"
                             :class="msg.role === 'user' ? 'flex-row-reverse' : ''">
-                            <div
-                                class="w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-[9px] font-medium flex items-center justify-center shrink-0 shadow-md">
+
+                            <div class="w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600
+              text-white text-[9px] font-medium flex items-center justify-center
+              shrink-0 shadow-md">
                                 {{ msg.role === 'user' ? 'U' : 'AI' }}
                             </div>
+
                             <div class="flex flex-col gap-0.5 max-w-[82%]"
                                 :class="msg.role === 'user' ? 'items-end' : ''">
-                                <div class="px-2.5 py-1.5 rounded-xl text-xs leading-relaxed break-words backdrop-blur-sm"
-                                    :class="msg.role === 'user'
-                                        ? 'bg-primary-500/90 text-white rounded-br-sm shadow-md'
-                                        : 'bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 border border-white/30 dark:border-gray-700/50 rounded-bl-sm shadow-sm'">
+
+                                <!-- User bubble: plain text -->
+                                <div v-if="msg.role === 'user'" class="px-2.5 py-1.5 rounded-xl rounded-br-sm text-xs leading-relaxed break-words
+                bg-primary-500/90 text-white shadow-md">
                                     {{ msg.content }}
                                 </div>
-                                <span class="text-[9px] text-gray-400 dark:text-gray-500 px-1">{{ formatTime(msg.date)
-                                    }}</span>
+
+                                <!-- AI bubble: rendered markdown with typing cursor -->
+                                <div v-else class="msg-ai-bubble px-2.5 py-1.5 rounded-xl rounded-bl-sm text-xs leading-relaxed
+                break-words bg-white/80 dark:bg-gray-800/80 border border-white/30
+                dark:border-gray-700/50 shadow-sm" @click="onBubbleClick">
+                                    <span v-if="isTyping(msg.id)">
+                                        {{ typingMap[msg.id] }}<span class="typing-cursor" />
+                                    </span>
+                                    <span v-else v-html="renderMessage(msg.content)" />
+                                </div>
+
+                                <span class="text-[9px] text-gray-400 dark:text-gray-500 px-1">
+                                    {{ formatTime(msg.date) }}
+                                </span>
                             </div>
                         </div>
                     </TransitionGroup>
@@ -83,7 +101,8 @@
                     <!-- Enhanced Typing Indicator -->
                     <div v-if="isLoading" class="flex gap-1.5">
                         <div
-                            class="w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-[9px] font-medium flex items-center justify-center shadow-md">{{ page?.ai?.name || 'AI' }}</div>
+                            class="w-5 h-5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-[9px] font-medium flex items-center justify-center shadow-md">
+                            {{ page?.ai?.name || 'AI' }}</div>
                         <div
                             class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/30 dark:border-gray-700/50 rounded-xl rounded-bl-sm px-3 py-2 shadow-sm">
                             <div class="flex gap-1">
@@ -131,7 +150,7 @@
         </Transition>
 
         <!-- Enhanced Trigger Button with glass effect -->
-        <button
+        <button v-if="!isFull"
             class="group relative w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95"
             :class="{ 'scale-95 shadow-md': isOpen }" @click="toggleChat">
             <div
@@ -157,14 +176,16 @@
 </template>
 
 <script lang="ts" setup>
+import { renderMessage } from '~/composables/useMarkdown'
+import { useChatTyping } from '~/composables/useChatTyping'
+import 'highlight.js/styles/atom-one-dark.css'
+
 const chatStore = useChatStore()
 const router = useRouter()
 const route = useRoute()
 const { data: page } = await useAsyncData("ai-template-page", () => queryCollection("ai_template").first())
 
-const props = defineProps<{
-    isFull?: boolean
-}>()
+const props = defineProps<{ isFull?: boolean }>()
 
 const isOpen = ref(false)
 const inputFocused = ref(false)
@@ -172,77 +193,93 @@ const newMessage = ref('')
 const inputRef = ref<HTMLInputElement>()
 const messagesRef = ref<HTMLElement>()
 const unreadCount = ref(0)
+const copiedId = ref<string | null>(null)
 let lastMessageCount = 0
+
+const { typingMap, typeIn, stopTyping } = useChatTyping()
 
 const messages = computed(() => chatStore.allMessages)
 const isLoading = computed(() => chatStore.isProcessing)
 
+// Returns the display content for a bubble — partial while typing, full when done
+function bubbleContent(msg: { id: string; content: string; role: string }) {
+    if (msg.role !== 'assistant') return null
+    return typingMap.value[msg.id] ?? msg.content
+}
+
+function isTyping(id: string) {
+    return id in typingMap.value
+}
+
 const scrollToBottom = async () => {
     await nextTick()
-    if (messagesRef.value) {
-        messagesRef.value.scrollTo({ top: messagesRef.value.scrollHeight, behavior: 'smooth' })
-    }
+    messagesRef.value?.scrollTo({ top: messagesRef.value.scrollHeight, behavior: 'smooth' })
 }
 
 const sendMessage = async () => {
-
     const text = newMessage.value.trim()
     if (!text || isLoading.value) return
-
-
     newMessage.value = ''
-    setTimeout(() => {
-        inputRef.value?.focus()
-        scrollToBottom()
-    }, 150)
+    setTimeout(() => { inputRef.value?.focus(); scrollToBottom() }, 150)
+
+    const prevCount = messages.value.length
     await chatStore.sendMessage(text)
-    await scrollToBottom()
+
+    // Find the new assistant message and type it in
     await nextTick()
+    const newMsgs = messages.value.slice(prevCount)
+    const aiMsg = newMsgs.find(m => m.role === 'assistant')
+    if (aiMsg) {
+        typeIn(aiMsg.id, aiMsg.content, () => scrollToBottom())
+    }
+
+    await scrollToBottom()
     inputRef.value?.focus()
 }
 
+async function copyCode(code: string, id: string) {
+    await navigator.clipboard.writeText(code)
+    copiedId.value = id
+    setTimeout(() => { copiedId.value = null }, 1500)
+}
+
+// Delegate copy button clicks inside v-html rendered bubbles
+function onBubbleClick(e: MouseEvent) {
+    const btn = (e.target as HTMLElement).closest('.msg-copy-btn') as HTMLElement | null
+    if (!btn) return
+    const code = btn.dataset.code ?? ''
+    copyCode(code, btn.dataset.id ?? '')
+}
+
 const formatTime = (date: Date | string) => {
-    const d = new Date(date)
-    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    return new Date(date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 }
 
 const clearChat = () => {
-    if (confirm('Clear all messages?')) {
-        chatStore.clearMessages()
-    }
+    if (confirm('Clear all messages?')) chatStore.clearMessages()
 }
 
 const toggleChat = () => {
     isOpen.value = !isOpen.value
-    if (isOpen.value) {
-        unreadCount.value = 0
-        nextTick(scrollToBottom)
-    }
+    if (isOpen.value) { unreadCount.value = 0; nextTick(scrollToBottom) }
 }
 
-// Track unread messages
 watch([messages, isOpen], () => {
-    if (!isOpen.value && messages.value.length > lastMessageCount) {
-        unreadCount.value++
-    }
+    if (!isOpen.value && messages.value.length > lastMessageCount) unreadCount.value++
     lastMessageCount = messages.value.length
 })
 
-// Auto-send from URL query
 const queryPrompt = computed(() => route.query.q as string || '')
-watch(queryPrompt, async (newQuery) => {
-    if (newQuery?.trim() && !isLoading.value) {
+watch(queryPrompt, async (q) => {
+    if (q?.trim() && !isLoading.value) {
         isOpen.value = true
-        newMessage.value = newQuery
+        newMessage.value = q
         await sendMessage()
         await router.replace({ query: {} })
     }
 })
 
-onMounted(() => {
-    chatStore.init()
-    lastMessageCount = messages.value.length
-})
+onMounted(() => { chatStore.init(); lastMessageCount = messages.value.length })
 </script>
 
 <style scoped>
@@ -350,5 +387,163 @@ onMounted(() => {
 /* Focus ring enhancement */
 input:focus {
     ring: none;
+}
+
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 11px;
+  background: var(--color-primary-500, #6366f1);
+  border-radius: 1px;
+  margin-left: 1px;
+  vertical-align: middle;
+  animation: blink 1s infinite;
+}
+@keyframes blink { 0%, 50% { opacity: 1 } 51%, 100% { opacity: 0 } }
+
+/* Code blocks inside bubbles */
+.msg-ai-bubble :deep(.msg-code-block) {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 6px 0;
+  font-size: 11px;
+  background: #1e1e2e;
+}
+.msg-ai-bubble :deep(.msg-code-header) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.06);
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+}
+.msg-ai-bubble :deep(.msg-code-lang) {
+  font-size: 10px;
+  font-family: ui-monospace, monospace;
+  color: #94a3b8;
+}
+.msg-ai-bubble :deep(.msg-copy-btn) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.msg-ai-bubble :deep(.msg-copy-btn:hover) {
+  color: #e2e8f0;
+}
+.msg-ai-bubble :deep(.msg-code-content) {
+  padding: 8px 10px;
+  overflow-x: auto;
+  color: #cdd6f4;
+  font-family: ui-monospace, monospace;
+  line-height: 1.5;
+}
+
+/* Inline code */
+.msg-ai-bubble :deep(code:not([class])) {
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #1e293b;
+}
+.dark .msg-ai-bubble :deep(code:not([class])) {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+/* Badges */
+.msg-ai-bubble :deep(.msg-badge) {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  font-weight: 500;
+  margin: 0 2px;
+}
+.msg-ai-bubble :deep(.msg-badge--green) {
+  background: #d1fae5;
+  color: #065f46;
+}
+.dark .msg-ai-bubble :deep(.msg-badge--green) {
+  background: rgba(6, 78, 59, 0.4);
+  color: #6ee7b7;
+}
+.msg-ai-bubble :deep(.msg-badge--blue) {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.dark .msg-ai-bubble :deep(.msg-badge--blue) {
+  background: rgba(30, 58, 138, 0.4);
+  color: #93c5fd;
+}
+.msg-ai-bubble :deep(.msg-badge--amber) {
+  background: #fef3c7;
+  color: #92400e;
+}
+.dark .msg-ai-bubble :deep(.msg-badge--amber) {
+  background: rgba(120, 53, 15, 0.4);
+  color: #fcd34d;
+}
+.msg-ai-bubble :deep(.msg-badge--red) {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.dark .msg-ai-bubble :deep(.msg-badge--red) {
+  background: rgba(127, 29, 29, 0.4);
+  color: #fca5a5;
+}
+.msg-ai-bubble :deep(.msg-badge--purple) {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+.dark .msg-ai-bubble :deep(.msg-badge--purple) {
+  background: rgba(76, 29, 149, 0.4);
+  color: #c4b5fd;
+}
+
+/* Links */
+.msg-ai-bubble :deep(a) {
+  color: #6366f1;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+.msg-ai-bubble :deep(a:hover) {
+  color: #4f46e5;
+}
+
+/* Paragraph spacing */
+.msg-ai-bubble :deep(p) {
+  margin-bottom: 6px;
+}
+.msg-ai-bubble :deep(p:last-child) {
+  margin-bottom: 0;
+}
+.msg-ai-bubble :deep(ul),
+.msg-ai-bubble :deep(ol) {
+  padding-left: 16px;
+  margin-bottom: 6px;
+}
+.msg-ai-bubble :deep(ul > * + *),
+.msg-ai-bubble :deep(ol > * + *) {
+  margin-top: 2px;
+}
+.msg-ai-bubble :deep(li) {
+  font-size: 12px;
+}
+.msg-ai-bubble :deep(hr) {
+  border: none;
+  border-top: 0.5px solid #e5e7eb;
+  margin: 8px 0;
+}
+.dark .msg-ai-bubble :deep(hr) {
+  border-top-color: #374151;
 }
 </style>

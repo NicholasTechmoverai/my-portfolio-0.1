@@ -1,15 +1,13 @@
 <template>
   <div>
     <UPage v-if="page">
-      <UPageHero 
+      <!-- <UPageHero 
         :title="page.title" 
         :description="page.description" 
         :links="page.links" 
         :ui="{ title: 'mx-0! text-left', description: 'mx-0! text-left', links: 'justify-start' }" 
-      />
-
-      <FloatingChat  :is-full="true"/>
-
+      /> -->
+      <FullChat class="mt-5"/>
     </UPage>
 
     <!-- Loading State -->
@@ -25,7 +23,7 @@ const route = useRoute()
 const chatStore = useChatStore()
 const inputRef = ref()
 
-import FloatingChat from '~/components/chat/FloatingChat.vue'
+import FullChat from '~/components/chat/FullChat.vue'
 
 const newMessage = ref('')
 const queryPrompt = computed(() => route.query.q as string || '')

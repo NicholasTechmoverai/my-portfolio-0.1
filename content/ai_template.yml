@@ -4,12 +4,12 @@ description: This is a template for AI chat interface using Nuxt 3 and Pinia.
 ai:
   name: AI
   fullName: Nicholas (AI)
-  shortDescription: Talk to me!
+  shortDescription: Ask staffs about me!
   description: Talk to the AI version of Nicholas. I'll do my best to assist you with any questions or tasks — whether you need information, advice, or just want to have a conversation. Feel free to ask me anything!
 
 startChat:
   title: "✨Start a conversation with Nicholas"
-  description: "Ask me anything, and I'll do my best to assist you!"
+  description: "Ask me anything about me, career, projects, skills, education...!"
 
 input: 
   placeholder: "Ask something magical..."
