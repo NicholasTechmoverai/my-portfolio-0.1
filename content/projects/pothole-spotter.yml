@@ -1,0 +1,20 @@
+title: Pothole Spotter — AI Road Defect Detection
+slug: pothole-spotter-ai
+description: |
+  AI-powered web application detecting, classifying, and visualizing potholes on Kenyan roads using Azure Custom Vision computer vision models (90%+ accuracy). Users upload road images with GPS coordinates, receiving real-time severity classification (minor/moderate/severe). Built with React 18 and Leaflet.js for interactive map visualization with color-coded markers and cluster grouping. Backend uses Node.js + Express.js with Multer for image uploads, JWT authentication, and BullMQ + Redis for async AI processing queues. MySQL database with geospatial extensions stores detection metadata and supports proximity searches. Features include road stretch analysis, admin dashboard with moderation tools, image compression via Sharp.js, CDN delivery, real-time WebSocket notifications, and CSV/PDF reporting. Redis 7 provides caching and session management. Containerized with Docker, deployed on Azure/AWS with CI/CD via GitHub Actions.
+image: /pothole-spotter.png
+url: "/projects/pothole-spotter/"
+tags:
+  - "React"
+  - "Node.js"
+  - "Express.js"
+  - "MySQL"
+  - "Redis"
+  - "Azure Custom Vision"
+  - "Leaflet.js"
+  - "Tailwind CSS"
+  - "Machine Learning"
+  - "Docker"
+  - "AWS"
+  - "WebSockets"
+date: "2025"

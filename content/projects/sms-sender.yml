@@ -1,0 +1,21 @@
+title: SMS Sender — Bulk Messaging Tool
+slug: sms-sender-bulk-messaging
+description: |
+  Bulk SMS messaging tool built with Python 3.12 (FastAPI) backend and Vue 3 (TypeScript) frontend with Nuxt UI. Enables users to send SMS messages to multiple contacts simultaneously with automatic SMS segment calculation (GSM-7/UCS-2 encoding). Features include contact management with country codes, message templates, bulk sending, scheduled delivery, real-time progress tracking, and delivery status webhooks. Integrates multiple SMS gateways (Twilio, Africa's Talking, Vonage) with automatic failover. Backend uses Tortoise ORM + MySQL, Redis 7 for caching and Celery for async processing. Frontend uses Pinia (TypeScript) for state management, Tailwind CSS, and VueUse composables. Includes SMS cost estimation, message history with analytics, CSV contact import/export, duplicate detection, and automatic retry logic. Containerized with Docker, deployed on AWS ECS with CI/CD via GitHub Actions, and monitored with Prometheus + Grafana.
+image: /sms-sender.png
+url: "/projects/sms-sender/"
+tags:
+  - "Python"
+  - "FastAPI"
+  - "Vue.js"
+  - "TypeScript"
+  - "MySQL"
+  - "Redis"
+  - "Nuxt Js"
+  - "Twilio"
+  - "Tailwind CSS"
+  - "Pinia"
+  - "Docker"
+  - "AWS"
+  - "Nuxt UI"
+date: "2025"

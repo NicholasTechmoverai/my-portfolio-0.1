@@ -1,0 +1,20 @@
+title: Food Lovers — Recipe Platform with 1,000+ Recipes
+slug: food-lovers-recipe-platform
+description: |
+  Food Lovers is a full-stack culinary platform built with Python (FastAPI) and Vue 3. The backend uses FastAPI with asynchronous request handling, Tortoise ORM for async MySQL operations, and JWT authentication with refresh tokens. Redis caching and Celery task queues power background jobs (image processing, email newsletters). The frontend leverages Vue 3 Composition API, Pinia for state management, and Tailwind CSS for responsive design. Features include interactive step-by-step cooking guides with timers, full-text recipe search with Elasticsearch, user-generated content (recipes, ratings, comments), auto-generated shopping lists, nutritional insights via Open Food Facts API, WebSocket real-time sync, and weekly email recipe drops. Containerized with Docker and deployed on AWS EC2 with Nginx reverse proxy. Includes 1,000+ curated recipes with 250+ authentic East African dishes and a community of 500+ food enthusiasts.
+image: /food-lovers.png
+url: "/projects/food-lovers/"
+tags:
+  - "Python"
+  - "FastAPI"
+  - "Vue.js"
+  - "MySQL"
+  - "Tortoise ORM"
+  - "Redis"
+  - "Celery"
+  - "Tailwind CSS"
+  - "WebSockets"
+  - "Docker"
+  - "AWS"
+  - "Elasticsearch"
+date: "2025"

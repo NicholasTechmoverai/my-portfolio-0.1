@@ -1,0 +1,23 @@
+title: Injustify/EZED — Universal Media Downloader (V1 → V2)
+slug: injustify-ezed-media-downloader
+description: |
+  Injustify/EZED is a cross-platform media downloader supporting YouTube, TikTok, Facebook, Instagram, and 1,800+ platforms via yt-dlp. The project evolved from V1 (Flask + SQLite + basic Vue) to V2 (FastAPI + MySQL + Vue 3 TypeScript + Nuxt UI + Celery/Redis), featuring AI-powered lyrics generation (Genius API + LRClib), audio separation (Spleeter), video summarization (OpenAI/Gemini), and real-time WebSocket progress tracking. V2 includes batch/playlist downloads, live stream capture, SponsorBlock integration, 6 customizable themes, browser extension bridge, and full Docker containerization. Backend uses Tortoise ORM + MySQL with Redis caching, Celery for async processing, and JWT authentication. Frontend uses Pinia state management, Tailwind CSS, and Nuxt UI components. Deployed on AWS ECS with CI/CD via GitHub Actions.
+image: /injustify-ezed.png
+url: "/projects/injustify-ezed-media-downloader/"
+tags:
+  - "Python"
+  - "FastAPI"
+  - "Flask"
+  - "Vue.js"
+  - "TypeScript"
+  - "MySQL"
+  - "Redis"
+  - "yt-dlp"
+  - "Genius API"
+  - "OpenAI"
+  - "Celery"
+  - "Docker"
+  - "AWS"
+  - "Nuxt UI"
+  - "Tailwind CSS"
+date: "2025"

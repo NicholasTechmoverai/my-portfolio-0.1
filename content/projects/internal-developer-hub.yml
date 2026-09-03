@@ -1,29 +1,29 @@
-title: Developer Productivity Portal
-slug: internal-developer-hub
-description: Built an internal tooling portal for developers with Nuxt 4 SSR, schema-driven component library, centralized docs, and CI/CD deployment monitoring.
-image: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
-url: "/projects/internal-developer-hub/"
-tags: ["Vue.js", "Nuxt 4", "Nuxt UI", "Tailwind CSS", "TypeScript", "Docker", "CI/CD"]
-date: "2024"
-collaborators: 
-  - name: Jane Doe
-    role: UX Designer
-    profileUrl: "https://www.linkedin.com/in/janedoe"
-  - name: John Smith
-    role: Backend Developer
-    profileUrl: "https://www.linkedin.com/in/johnsmith"
+# title: Developer Productivity Portal
+# slug: internal-developer-hub
+# description: Built an internal tooling portal for developers with Nuxt 4 SSR, schema-driven component library, centralized docs, and CI/CD deployment monitoring.
+# image: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+# url: "/projects/internal-developer-hub/"
+# tags: ["Vue.js", "Nuxt 4", "Nuxt UI", "Tailwind CSS", "TypeScript", "Docker", "CI/CD"]
+# date: "2024"
+# collaborators: 
+#   - name: Jane Doe
+#     role: UX Designer
+#     profileUrl: "https://www.linkedin.com/in/janedoe"
+#   - name: John Smith
+#     role: Backend Developer
+#     profileUrl: "https://www.linkedin.com/in/johnsmith"
 
 
-files:
-  - name: "Project Documentation"
-    url: "https://docs.internal-dev-portal.com"
-    type: "pdf"
+# files:
+#   - name: "Project Documentation"
+#     url: "https://docs.internal-dev-portal.com"
+#     type: "pdf"
   
-images:
-  - url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-    alt: "Developer Productivity Portal Screenshot"
-  - url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-    alt: "Developer Productivity Portal Dashboard"
+# images:
+#   - url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+#     alt: "Developer Productivity Portal Screenshot"
+#   - url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+#     alt: "Developer Productivity Portal Dashboard"
 
 
-skills: ["backend and frontend development", "UI/UX design", "project management", "collaboration", "documentation"]
+# skills: ["backend and frontend development", "UI/UX design", "project management", "collaboration", "documentation"]

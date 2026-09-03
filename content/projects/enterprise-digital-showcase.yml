@@ -1,0 +1,21 @@
+title: Enterprise Digital Showcase — FastAPI + Nuxt 3
+slug: enterprise-digital-showcase
+description: |
+  Enterprise-ready application built with Python 3.12 (FastAPI) and Nuxt 3 (Vue 3). Backend features asynchronous request handling via Uvicorn, Tortoise ORM for async MySQL operations, JWT authentication with refresh tokens, RBAC permissions, rate limiting via SlowAPI, and Celery + Redis for background tasks. Frontend leverages Nuxt 3 SSR/SSG, Pinia for state management, and Tailwind CSS for responsive UI. Core features include project portfolio CRUD, full-text search with faceted filtering, real-time dashboards with Chart.js, asset management with Cloudinary, client collaboration portal, WebSocket notifications via Socket.IO (Redis-backed), and PDF/Excel report generation. Redis 7 provides distributed caching and session storage. Containerized with Docker, deployed on AWS ECS with auto-scaling, CI/CD via GitHub Actions, and monitoring with Prometheus + Grafana. Achieves 90%+ test coverage with Pytest and implements Helmet.js for security hardening.
+image: /tera-in.png
+url: "/projects/enterprise-digital-showcase/"
+tags:
+  - "Python"
+  - "FastAPI"
+  - "Nuxt 3"
+  - "Vue 3"
+  - "MySQL"
+  - "Tortoise ORM"
+  - "Redis"
+  - "Celery"
+  - "Socket.IO"
+  - "Docker"
+  - "AWS"
+  - "Tailwind CSS"
+  - "Pytest"
+date: "2025"

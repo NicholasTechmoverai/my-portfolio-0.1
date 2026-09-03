@@ -1,0 +1,22 @@
+title: AI Activity Planner — Grok-Powered Assistant
+slug: ai-activity-planner-grok
+description: |
+  AI-powered activity planning platform using xAI's Grok API to recommend outfits and activities based on real-time weather and location data. Built with Python 3.12 (FastAPI) async backend and Nuxt 3 (Vue.js) with full TypeScript support for type-safe frontend development. Backend integrates OpenWeatherMap, Google Geocoding, and FourSquare/Google Places APIs with Tortoise ORM + MySQL, Redis 7 caching, and Celery task queues. Features include real-time weather dashboard, personalized outfit suggestions, smart activity curation, auto-generated packing checklists, multi-day itinerary planning, conversational interface with Grok, weather alerts, and social sharing. Frontend uses Pinia (TypeScript) for state management, Tailwind CSS with shadcn/vue, VueUse composables, and Framer Motion animations. Recommendation system includes user feedback loop for continuous prompt optimization. Containerized with Docker, deployed on AWS ECS with CI/CD via GitHub Actions, and monitored with Prometheus + Grafana + Sentry. Achieves 90%+ test coverage with Pytest and Vitest.
+image: /ai-activity-planner-grok.png
+url: "/projects/ai-activity-planner-grok/"
+tags:
+  - "Python"
+  - "FastAPI"
+  - "Nuxt 3"
+  - "Vue.js"
+  - "TypeScript"
+  - "MySQL"
+  - "Redis"
+  - "Grok API"
+  - "xAI"
+  - "Tailwind CSS"
+  - "Docker"
+  - "AWS"
+  - "Celery"
+  - "Pinia"
+date: "2025"

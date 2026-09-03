@@ -1,0 +1,19 @@
+title: KenMall X — Full-Stack E-Commerce Platform
+slug: e-commerce-kenmall-x
+description: |
+  KenMall X is a full-stack e-commerce platform built with Next.js 14 (App Router) and React 18. It features SSR, SSG, and ISR for performance and SEO. State is managed with Zustand and React Query, while Tailwind CSS + shadcn/ui deliver a responsive UI. Backend uses Next.js API Routes with JWT authentication (HTTP-only cookies), MongoDB + Mongoose for data modeling, and Socket.io for real-time updates. Stripe Checkout handles payment simulation, MongoDB Atlas Search enables product discovery, and the admin dashboard uses Recharts. Dockerized and deployed on Vercel.
+image: /kenmallx.png
+url: "/projects/kenmall-x/"
+tags:
+  - "Next.js"
+  - "React"
+  - "MongoDB"
+  - "Tailwind CSS"
+  - "Socket.io"
+  - "Stripe"
+  - "JWT"
+  - "Zustand"
+  - "React Query"
+  - "Docker"
+  - "Vercel"
+date: "2025"
